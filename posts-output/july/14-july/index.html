@@ -106,56 +106,6 @@ defaultdict&#40;&lt;class 'list'&gt;, {'a': &#91;1, 2&#93;}&#41;
 &#91;4, 5&#93;
 &gt;&gt;&gt; c&#91;3:5&#93;
 &#91;4, 5&#93;
-
-                                </code></pre><p>Thank you for reading this blog post,I would be writing more blogs on Python tricks/stuff I like in Python. {:title "Programming Tricks in Python3"  :layout :post}</p><p>Hello World! This is my second post on Python Programming tricks and these are actually the snippets which I loved and read on the internet and a book named Python Cookbook. I would like to share some of the concepts/tricks of python which blew my mind , and I actually did them on my repl:</p><h2 id="1.&#95;defaultdict&#95;vs&#95;setdefault&#95;:">1. defaultdict vs setdefault :</h2><p>when you want to use dictionary and for every key the datatype of the value is same,so one can use one of the two methods in Python3 namely defaultdict and setdefault</p><pre><code>&gt;&gt;&gt;from collections import defaultdict
-
-&gt;&gt;&gt;d = defaultdict&#40;list&#41;
-&gt;&gt;&gt;d&#91;'a'&#93;.append&#40;1&#41;
-&gt;&gt;&gt;d&#91;'a'&#93;.append&#40;2&#41;
-&gt;&gt;&gt;d
-defaultdict&#40;&lt;class 'list'&gt;, {'a': &#91;1, 2&#93;}&#41;
-
-
-                                </code></pre><p>OR with setdefault</p><pre><code>&gt;&gt;&gt;d = {}
-&gt;&gt;&gt;d.setdefault&#40;'a', &#91;&#93;&#41;.append&#40;1&#41;
-&gt;&gt;&gt;d.setdefault&#40;'a', &#91;&#93;&#41;.append&#40;2&#41;
-&gt;&gt;&gt;d.setdefault&#40;'b', &#91;&#93;&#41;.append&#40;4&#41;
-
-                                </code></pre><p>It would make sense that defaultdict is faster that dict.setdefault() since the former sets its default for the entire dict at creation time, whereas setdefault() does it per element when it is read. One reason to use setdefault is when the default you assign is based on the key (or something) rather than a generic default for the entire dict.</p><h2 id="2.&#95;finding&#95;commonalities&#95;in&#95;two&#95;dictionaries">2. Finding Commonalities in Two Dictionaries</h2><p>You have two dictionaries and want to find out what they might have in common (same keys, same values, etc.).</p><pre><code>&gt;&gt;&gt; a={'a' :1, 'b':2,'c':2}
-&gt;&gt;&gt; b={'d':1,'e':1,'b':2}
-
-#Common keys
-&gt;&gt;&gt; a.keys&#40;&#41; &amp; b.keys&#40;&#41;
-{'b'}
-
-
-#keys which are in a but not in b
-&gt;&gt;&gt; a.keys&#40;&#41; - b.keys&#40;&#41;
-{'c', 'a'}
-
-#&#40;key,value&#41; pairs in common
-&gt;&gt;&gt; a.items&#40;&#41; &amp; b.items&#40;&#41;
-{&#40;'b', 2&#41;}
-
-                                </code></pre><h2 id="3.&#95;naming&#95;a&#95;slice">3. Naming a slice</h2><p>This isn't a trick but I found it amazing and important because it can be used for improving the readability of the code. Instead of hardcoding the slices we can name it and change the value of the slice. For example:</p><pre><code>
-&gt;&gt;&gt; a=slice&#40;3,5,1&#41;
-&gt;&gt;&gt; b=slice&#40;3,5&#41;
-&gt;&gt;&gt; a.start
-3
-&gt;&gt;&gt; a.stop
-5
-&gt;&gt;&gt; a.step
-1
-#by default step is None
-&gt;&gt;&gt; b.step
-&gt;&gt;&gt; c=&#91;1,2,3,4,5,6,7,8,9&#93;
-# it's as good as
-&gt;&gt;&gt; c=&#91;1,2,3,4,5,6,7,8,9&#93;
-&gt;&gt;&gt; c&#91;b&#93;
-&#91;4, 5&#93;
-&gt;&gt;&gt; c&#91;3:5&#93;
-&#91;4, 5&#93;
-
                                 </code></pre><p>Thank you for reading this blog post,I would be writing more blogs on Python tricks/stuff I like in Python.</p>
                             </div>
                         </div>
