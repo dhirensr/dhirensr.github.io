@@ -77,8 +77,8 @@
 
                                     <h3> About the Honeypot Project </h3>
                                     This is a project which I am working on,this project is sponsored by Open Web Application Security Project (OWASP).
-                                    OWASP Python Honeypot is an open source software in Python language which is designed for creating honeypot and honeynet in an easy and secure way.
-
+                                    OWASP Python Honeypot is an open source project in Python language which is designed for creating honeypot and honeynet in an easy and secure way.
+                                    <br>
                                     There are basically modules in this project and each of them has services in it: <br>
                                     1. SSHD server : when you deploy OWASP honeypot, it will deploy two docker containers each one of them with an sshd server running.The difference between them is one of them has a weak password and the other one has a strong password.
                                     The weak password sshd server is used to monitor hacker activities like what commands does the hacker perform after getting logged in easily.
@@ -100,18 +100,21 @@
                                     I fixed some of the existing bugs in the project and also added the strategy for logging the information in the services.
                                     <h4> SSH Service </h4>
                                     In SSH service there are 2 versions : weak password and strong password. In strong password I added the script where we log all the credentials information from the hacker/user.
-                                    In the weak version of the service we log all the information about the files that the user is trying to access after getting inside the container(service) because the password is quite easy to guess for this service(hence the name ssh_weak_password).
+                                    In the weak version of the service we log all the information about the files that the user is trying to access after getting inside the container(service) because the password is quite easy to guess for this service(hence the name ssh_weak_password).<br>
                                     <h4> FTP Service </h4>
                                     In the FTP service also there are 2 versions : weak password and strong password.
                                     In weak password and strong password the idea is the same for logging.
-                                    But the script for strong password differs in both the service because of the difference of the implementation of both the services.
+                                    But the script for strong password differs in both the service because of the difference of the implementation of both the services.<br>
 
                                     <h4> HTTP Service </h4>
-                                    In HTTP service I have added the logging of the creds and also the headers (which are sent to the HTTP server).
+                                    In HTTP service I have added the logging of the creds and also the headers (which are sent to the HTTP server).<br>
                                     <h4> Module Processor  </h4>
                                     In each of the service we have added a ModuleProcessor in the init file of each of the module.
                                     Each service is ran as docker container so the init file of each module contains the configuration of the container and also init file contains ModuleProcessor.
-                                    ModuleProcessor does the job of put the logs created by the service into the database in a separate thread.
+                                    ModuleProcessor does the job of put the logs created by the service into the database in a separate thread.<br>
+
+                                    <h4> Duplicated Code refactor </h4>
+                                    There was a lot of duplicated code in the api part of the project and one of my tasks in GSOC was to remove all the duplicated code from the project. <br>
 
                                     <h4> Web Part </h4>
                                     I also contributed a huge amount to web part of the project. I added many routes which were mentioned by Ali-Razmjoo (my mentor) and then added some routes to access the credentials informations which are obtained from the modules. I updated the wiki part of the project for documentation of the new routes.
@@ -120,25 +123,34 @@
                                     <br>
                                     <h3> Links to my Work in GSOC Period </h3>
                                     <ul style="list-style-type:disc;">
-                                        <li><a href="https://github.com/zdresearch/OWASP-Honeypot/pull/45"> HTTP Strong Password </a></li>
-                                        <li><a href="https://github.com/zdresearch/OWASP-Honeypot/pull/39"> SSH Strong Password </a></li>
-                                        <li><a href="https://github.com/zdresearch/OWASP-Honeypot/pull/46"> FTP Strong Password </a></li>
-                                        <li><a href="https://github.com/zdresearch/OWASP-Honeypot/pull/48"> FTP/SSH weak password </a></li>
-                                        <li><a href="https://github.com/zdresearch/OWASP-Honeypot/pull/49"> Credentials table and top usernames/passwords </a></li>
-                                        <li><a href="https://github.com/zdresearch/OWASP-Honeypot/pull/38"> Duplicated Code Refactor </a></li>
-                                        <li><a href="https://github.com/zdresearch/OWASP-Honeypot/pull/37"> Duplicated Code Refactor -2 </a></li>
-                                        <li><a href="https://github.com/zdresearch/OWASP-Honeypot/pull/9"> Adding new route </a></li>
-                                        <li><a href="https://github.com/zdresearch/OWASP-Honeypot/pull/18"> Adding new route - 2 </a></li>
-                                        <li><a href="https://github.com/zdresearch/OWASP-Honeypot/pull/21"> Adding new route - 3 </a></li>
-                                        <li><a href="https://github.com/zdresearch/OWASP-Honeypot/pull/23"> Adding new route - 4 </a></li>
-                                        <li><a href="https://github.com/zdresearch/OWASP-Honeypot/pull/25"> Adding new route - 5 </a></li>
-                                        <li><a href="https://github.com/zdresearch/OWASP-Honeypot/pull/29"> Adding new route - 6 </a></li>
-                                        <li><a href="https://github.com/zdresearch/OWASP-Honeypot/pull/13"> Link to the bug solved </a></li>
+                                        <li><a target="_blank" href="https://github.com/zdresearch/OWASP-Honeypot/pull/45"> HTTP Strong Password </a></li>
+                                        <li><a target="_blank" href="https://github.com/zdresearch/OWASP-Honeypot/pull/39"> SSH Strong Password </a></li>
+                                        <li><a target="_blank" href="https://github.com/zdresearch/OWASP-Honeypot/pull/46"> FTP Strong Password </a></li>
+                                        <li><a target="_blank" href="https://github.com/zdresearch/OWASP-Honeypot/pull/48"> FTP/SSH weak password </a></li>
+                                        <li><a target="_blank" href="https://github.com/zdresearch/OWASP-Honeypot/pull/49"> Credentials table and top usernames/passwords </a></li>
+                                        <li><a target="_blank" href="https://github.com/zdresearch/OWASP-Honeypot/pull/38"> Duplicated Code Refactor </a></li>
+                                        <li><a target="_blank" href="https://github.com/zdresearch/OWASP-Honeypot/pull/37"> Duplicated Code Refactor -2 </a></li>
+                                        <li><a target="_blank" href="https://github.com/zdresearch/OWASP-Honeypot/pull/9"> Adding new route </a></li>
+                                        <li><a target="_blank" href="https://github.com/zdresearch/OWASP-Honeypot/pull/18"> Adding new route - 2 </a></li>
+                                        <li><a target="_blank" href="https://github.com/zdresearch/OWASP-Honeypot/pull/21"> Adding new route - 3 </a></li>
+                                        <li><a target="_blank" href="https://github.com/zdresearch/OWASP-Honeypot/pull/23"> Adding new route - 4 </a></li>
+                                        <li><a target="_blank" href="https://github.com/zdresearch/OWASP-Honeypot/pull/25"> Adding new route - 5 </a></li>
+                                        <li><a target="_blank" href="https://github.com/zdresearch/OWASP-Honeypot/pull/29"> Adding new route - 6 </a></li>
+                                        <li><a target="_blank" href="https://github.com/zdresearch/OWASP-Honeypot/pull/13"> Link to the bug solved </a></li>
                                     </ul>
                                     <br>
-                                    Here one can find all the commits done for the GSOC work : <a href="https://github.com/zdresearch/OWASP-Honeypot/pulls?utf8=%E2%9C%93&q=is%3Apr+author%3Adhirensr+"> here </a>
+                                    Here one can find all the commits done for the GSOC work : <a target="_blank" href="https://github.com/zdresearch/OWASP-Honeypot/pulls?utf8=%E2%9C%93&q=is%3Apr+author%3Adhirensr+"> here </a>
 
-
+                                    <br>
+                                    <h3 > Status of the Project </h3>
+                                    I have completed most the tasks which were mentioned by me in the proposal. There are few PR's which needs a review from my mentor and they are the only tasks which are remaining.
+                                    <br>
+                                    <h3 > Not the End </h3>
+                                    I would like to thank my mentor <a href="https://github.com/Ali-Razmjoo" target="_blank"> Ali Razmjoo </a> for being an awesome mentor and for the constant support and motivation.
+                                    Had he not been so supportive, it would not have been a successful one.<br>
+                                    It has been a productive summer writing a lot of code and getting familiar with the open source community and practices. Ofcourse GSOC is not the end and I would continue contributing to the project after GSOC period too.
+                                    <br>
+                                    Thanks Google for organizing such an awesome program and looking forward to participate next year also.
 
 
                                 </p>
