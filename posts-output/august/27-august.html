@@ -77,21 +77,11 @@
 
                                     <h3> About the Honeypot Project </h3>
                                     This is a project which I am working on,this project is sponsored by Open Web Application Security Project (OWASP).
-                                    OWASP Python Honeypot is an open source project in Python language which is designed for creating honeypot and honeynet in an easy and secure way.
+                                    OWASP Python Honeypot is an open source project in Python language which is designed for creating honeypot and honeynet in an easy and secure way. OWASP Honeypot is an open source software in Python language which designed for creating honeypot and honeynet in an easy and secure way!
                                     <br>
-                                    There are basically modules in this project and each of them has services in it: <br>
-                                    1. SSHD server : when you deploy OWASP honeypot, it will deploy two docker containers each one of them with an sshd server running.The difference between them is one of them has a weak password and the other one has a strong password.
-                                    The weak password sshd server is used to monitor hacker activities like what commands does the hacker perform after getting logged in easily.
-                                    The strong password sshd server is used to monitor what does hacker provides as username/passwords to get into the system.As the system has a randomly generated password , it would not be that easy to log in to the system .Also for each attempt to sshd login there are logs stored as to what is being used as username and password. <br>
-                                    2. FTP server : There are two versions of this module namely weak password and strong password.
-                                    The weak password is used to monitor what type of files /malware does the hacker upload once logged in easily to the system.The username and password is very easy to guess ,typically username as "root" and password as "123456" ,so the hacker can get in easily.
-                                    The strong password is again used to monitor the username and password used to log in to the system and then also the type of file uploaded by the hacker.Each of these activities are logged in the docker container and on a timely basis sent to the database to store as a record.
-                                    The database used in this project is MongoDB. <br>
-                                    3. HTTP server : This module has also two versions of this module namely weak password and strong password.
-                                    Weak passwords is used to monitor the requests on the server and also if the hacker is trying Denial of Service attacks it can be easily detected by this module.
-                                    Strong passwords would again track the username and passwords used by the attacker to get into the system.
+
+                                    <img src="https://raw.githubusercontent.com/zdresearch/OWASP-Honeypot/master/web/static/img/owasp.png" width="500">
                                     <br>
-                                    OWASP Honeypot is an open source software in Python language which designed for creating honeypot and honeynet in an easy and secure way!
                                     <br>
                                     <img src="../../img/gsoc.png" align="middle" height="700px" width="200px">
                                     <img src="../../img/owasp.jpg" align="middle" height="700px" width="200px">
@@ -131,7 +121,7 @@
                                     I have completed most the tasks which were mentioned by me in the proposal.
                                     <br>
                                     I would like to thank my mentor <a href="https://github.com/Ali-Razmjoo" target="_blank"> Ali Razmjoo </a> for being an awesome mentor and also <a href="https://github.com/ChakshuGupta" target="_blank"> Chakshu Gupta (peer) </a>  for the constant feedback on my work done during GSOC.
-                                    Had he not been so supportive, it would not have been a successful one.<br>
+                                    Had they not been so supportive, it would not have been a successful one.<br>
                                     <br>
                                     Lastly, thank you Google for organizing such an awesome program.
 
